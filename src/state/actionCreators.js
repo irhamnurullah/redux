@@ -1,8 +1,10 @@
 import axios from 'axios';
 
+const url = 'http://localhost:4000/users';
+
 export const fetchUsers = () => {
   return async (dispatch) => {
-    const response = await axios.get('http://localhost:4000/users');
+    const response = await axios.get(url);
     dispatch({
       type: 'SET_USERS',
       payload: {
@@ -14,7 +16,7 @@ export const fetchUsers = () => {
 
 export const addUser = (name) => {
   return async (dispatch) => {
-    const response = await axios.post('http://localhost:4000/users', {
+    const response = await axios.post(url, {
       name,
     });
     dispatch({
@@ -28,7 +30,7 @@ export const addUser = (name) => {
 
 export const deleteUser = (id) => {
   return async (dispatch) => {
-    const response = await axios.delete(`http://localhost:4000/users/${id}`);
+    const response = await axios.delete(url + `/${id}`);
     dispatch({
       type: 'DELETE_USER',
       payload: {
@@ -40,7 +42,7 @@ export const deleteUser = (id) => {
 
 export const detailUser = (id) => {
   return async (dispatch) => {
-    const response = await axios.get(`http://localhost:4000/users/${id}`);
+    const response = await axios.get(url + `/${id}`);
     dispatch({
       type: 'DETAIL_USER',
       payload: { data: response.data },
@@ -50,7 +52,7 @@ export const detailUser = (id) => {
 
 export const editUser = ({ id, name }) => {
   return async (dispatch) => {
-    const response = await axios.put(`http://localhost:4000/users/${id}`, {
+    const response = await axios.put(url + `/${id}`, {
       name,
       id,
     });

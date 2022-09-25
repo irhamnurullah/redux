@@ -1,28 +1,3 @@
 {
-  "users": [
-    {
-      "name": "marsha",
-      "id": 1
-    },
-    {
-      "name": "irham",
-      "id": 2
-    },
-    {
-      "name": "nurullah",
-      "id": 3
-    },
-    {
-      "name": "aghnia",
-      "id": 4
-    },
-    {
-      "name": "salam",
-      "id": 5
-    },
-    {
-      "name": "gunawan",
-      "id": 6
-    }
-  ]
+  "users": []
 }
